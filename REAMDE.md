@@ -41,15 +41,18 @@ Check out page [here](https://github.com/reeder32/pizza-parlor.git)
 
 ### Tests
 
-Describe: 
+Describe: addTopping()
 
-Test: 
-Code: 
-Expected Output: 
+Test: "This should add a topping to the pizza's toppings array"
+Code: let pizza = Pizza();
+      pizza.addTopping("pepperoni")
+Expected Output: Pizza({toppings: ["pepperoni"], size: undefined})
 
-Test: 
-Code: 
-Expected Output: 
+Describe addSize()
+Test: "It should add value to size property" 
+Code: let pizza = Pizza();
+      pizza.addSize("medium")
+Expected Output: Pizza({toppings: [], size: 'medium'})
 
 Test: 
 Code: 
