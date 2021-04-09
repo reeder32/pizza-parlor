@@ -35,5 +35,11 @@ Pizza.prototype.getPriceForToppings = function () {
 // UI Logic
 
 $(document).ready(function () {
+  let pizza = new Pizza();
+  $("#order-form").submit(function (event) {
+    let size = $("input[name='sizeRadios']:checked").val();
 
+    console.log(size);
+    event.preventDefault();
+  })
 });
