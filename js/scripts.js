@@ -38,14 +38,12 @@ $(document).ready(function () {
   let pizza = new Pizza();
   function showSummary() {
     console.log("Here");
-    let summaryText = "Your pizza has: cheese, "
+    let summaryText = "Your pizza has: cheese"
     pizza.toppings.forEach(function (topping, index) {
       console.log(topping);
-      if (index === pizza.toppings.length - 1) {
-        summaryText = summaryText + topping;
-      } else {
-        summaryText = summaryText + topping + ", ";
-      }
+
+      summaryText = summaryText + ", " + topping;
+
     });
     console.log(summaryText);
     $(".card-title").text(`You ordered a ${pizza.size} pizza!`);
@@ -64,8 +62,7 @@ $(document).ready(function () {
     event.preventDefault();
   })
 
-  $("#start-over").click(function (event) {
+  $("#start-over").click(function () {
     location.reload();
-    event.preventDefault();
-  })
+  });
 });
