@@ -38,8 +38,10 @@ $(document).ready(function () {
   let pizza = new Pizza();
   $("#order-form").submit(function (event) {
     let size = $("input[name='sizeRadios']:checked").val();
-
-    console.log(size);
+    pizza.addSize(size);
+    let toppings = $("input[name='toppingRadios']:checked").map(function (index, element) {
+      pizza.addTopping(element.value);
+    });
     event.preventDefault();
   })
 });
