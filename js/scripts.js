@@ -31,8 +31,9 @@ Pizza.prototype.getPriceForToppings = function () {
   return this.toppings.length + 1;
 }
 
-let pizza = new Pizza();
-pizza.addTopping("pepperoni");
-pizza.addTopping("olives");
-//pizza.addSize("medium");
-console.log(pizza.getPriceForToppings());
+
+// UI Logic
+
+$(document).ready(function () {
+
+});
