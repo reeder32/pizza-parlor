@@ -2,7 +2,7 @@
 
 #### A project for ordering your favorite pizza.
 
-Check out page [here](https://github.com/reeder32/pizza-parlor.git)
+Check out page [here](https://reeder32.github.io/pizza-parlor/)
 
 #### By Nick Reeder
 
