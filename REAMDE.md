@@ -54,9 +54,11 @@ Code: let pizza = Pizza();
       pizza.addSize("medium")
 Expected Output: Pizza({toppings: [], size: 'medium'})
 
-Test: 
-Code: 
-Expected Output: 
+Describe getPriceForSize
+Test: "It should return a price based on what size was chosen"
+Code: let pizza = Pizza()
+      pizza.getPriceForSize("medium")
+Expected Output: 15
 
 Test: 
 Code: 
