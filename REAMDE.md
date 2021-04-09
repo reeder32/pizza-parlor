@@ -53,13 +53,13 @@ Code: let pizza = Pizza();
       pizza.addSize("medium")
 Expected Output: Pizza({toppings: [], size: 'medium'})
 
-Describe getPriceForSize()
+Describe: getPriceForSize()
 Test: "It should return a price based on what size was chosen"
 Code: let pizza = Pizza()
       pizza.getPriceForSize("medium")
 Expected Output: 15
 
-Describe getPriceForToppings()
+Describe: getPriceForToppings()
 Test: "It should return the length of the toppings array + 1 (for cheese)"
 Code: let pizza = Pizza()
       pizza.addTopping("pepperoni")
@@ -67,13 +67,11 @@ Code: let pizza = Pizza()
       pizza.getPriceForToppings()
 Expected Output: 3
 
-Test: 
-Code: 
-Expected Output: 
-
-Test: 
-Code: 
-Expected Output: 
+Describe: showSummary()
+Test: "It should hide the order form, calculate the price, and show the summary"
+Code: showSummary()
+Expected Output: update UI with correct price
+ 
 
 
 

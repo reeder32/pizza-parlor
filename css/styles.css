@@ -1,3 +1,7 @@
 #order-summary {
   display: none;
 }
+
+.card-footer {
+  margin-top: 8px;
+}
