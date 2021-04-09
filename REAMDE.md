@@ -42,7 +42,6 @@ Check out page [here](https://github.com/reeder32/pizza-parlor.git)
 ### Tests
 
 Describe: addTopping()
-
 Test: "This should add a topping to the pizza's toppings array"
 Code: let pizza = Pizza();
       pizza.addTopping("pepperoni")
@@ -54,15 +53,19 @@ Code: let pizza = Pizza();
       pizza.addSize("medium")
 Expected Output: Pizza({toppings: [], size: 'medium'})
 
-Describe getPriceForSize
+Describe getPriceForSize()
 Test: "It should return a price based on what size was chosen"
 Code: let pizza = Pizza()
       pizza.getPriceForSize("medium")
 Expected Output: 15
 
-Test: 
-Code: 
-Expected Output: 
+Describe getPriceForToppings()
+Test: "It should return the length of the toppings array + 1 (for cheese)"
+Code: let pizza = Pizza()
+      pizza.addTopping("pepperoni")
+      pizza.addTopping("olives")
+      pizza.getPriceForToppings()
+Expected Output: 3
 
 Test: 
 Code: 
