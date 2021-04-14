@@ -12,22 +12,20 @@ Pizza.prototype.addSize = function (size) {
   this.size = size;
 }
 
-function getPriceForSize() {
+Pizza.prototype.getPrice = function () {
+  let toppingPrice = this.toppings.length + 1;
   switch (this.size) {
     case "small":
-      return 10;
+      this.price = toppingPrice + 10;
     case "medium":
-      return 15;
+      this.price = toppingPrice + 15;
     case "large":
-      return 20;
+      this.price = toppingPrice + 20;
     default:
       return 0;
   }
 }
 
-function getPriceForToppings() {
-  return this.toppings.length + 1;
-}
 
 
 // UI Logic
@@ -52,7 +50,8 @@ $(document).ready(function () {
     let toppings = $("input[name='toppingRadios']:checked").map(function (index, element) {
       pizza.addTopping(element.value);
     });
-    pizza.price = getPriceForSize() + getPriceForToppings();
+    pizza.getPrice();
+    console.log(pizza);
     showSummary();
     event.preventDefault();
   })
