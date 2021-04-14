@@ -51,7 +51,6 @@ $(document).ready(function () {
       pizza.addTopping(element.value);
     });
     pizza.getPrice();
-    console.log(pizza);
     showSummary();
     event.preventDefault();
   })
