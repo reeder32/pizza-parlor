@@ -26,14 +26,11 @@ Pizza.prototype.getPrice = function () {
   }
 }
 
-
-
 // UI Logic
 
 $(document).ready(function () {
   let pizza = new Pizza();
   function showSummary() {
-    console.log("Here");
     let summaryText = "Your pizza has: cheese"
     pizza.toppings.forEach(function (topping, index) {
       summaryText = summaryText + ", " + topping;
