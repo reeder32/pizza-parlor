@@ -1,6 +1,7 @@
 function Pizza() {
   this.toppings = [];
   this.size = undefined;
+  this.price = undefined;
 }
 
 Pizza.prototype.addTopping = function (topping) {
@@ -11,23 +12,20 @@ Pizza.prototype.addSize = function (size) {
   this.size = size;
 }
 
-Pizza.prototype.getPriceForSize = function () {
+function getPriceForSize() {
   switch (this.size) {
     case "small":
       return 10;
-      break;
     case "medium":
       return 15;
-      break;
     case "large":
       return 20;
-      break;
     default:
       return 0;
   }
 }
 
-Pizza.prototype.getPriceForToppings = function () {
+function getPriceForToppings() {
   return this.toppings.length + 1;
 }
 
@@ -40,15 +38,11 @@ $(document).ready(function () {
     console.log("Here");
     let summaryText = "Your pizza has: cheese"
     pizza.toppings.forEach(function (topping, index) {
-      console.log(topping);
-
       summaryText = summaryText + ", " + topping;
-
     });
-    console.log(summaryText);
     $(".card-title").text(`You ordered a ${pizza.size} pizza!`);
     $(".card-text").text(summaryText);
-    $("#charge-button").text(`Pay $${pizza.getPriceForSize() + pizza.getPriceForToppings()}`);
+    $("#charge-button").text(`Pay $${pizza.price}`);
     $("#order-form").slideUp();
     $("#order-summary").fadeIn();
   }
@@ -58,6 +52,7 @@ $(document).ready(function () {
     let toppings = $("input[name='toppingRadios']:checked").map(function (index, element) {
       pizza.addTopping(element.value);
     });
+    pizza.price = getPriceForSize() + getPriceForToppings();
     showSummary();
     event.preventDefault();
   })
